@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marianandrienko.github.io/PortfolioMy/sitemap.xml
