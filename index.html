@@ -66,47 +66,24 @@
           <p class="eyebrow">Для уроків та самостійної роботи <span class="heading-line"></span></p>
           <h2>Навчальні<br>матеріали<span class="accent">.</span></h2>
         </div>
-        <p class="section-note">Добірка демонстраційних навчальних тем і завдань. Матеріали можна адаптувати до класу та навчальної програми.</p>
+        <p class="section-note">Додавайте й редагуйте уроки в онлайн-редакторі. До кожного уроку можна прикріпити файли або посилання на документи й презентації. <a class="cms-link" href="https://pagescms.org/" target="_blank" rel="noreferrer">Відкрити редактор ↗</a></p>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card">
-          <a class="project-visual visual-algorithms" href="#contact" aria-label="Запитати про матеріали з алгоритмізації">
-            <span class="visual-kicker">ТЕМА 01 · АЛГОРИТМІЗАЦІЯ</span>
-            <span class="algorithm-title">Від ідеї<br>до алгоритму</span>
-            <div class="flowchart" aria-hidden="true"><span>Старт</span><i>↓</i><span>Умова?</span><i>↙ &nbsp; ↘</i><span class="flow-yes">Так</span><span class="flow-no">Ні</span></div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
-          </a>
-          <div class="project-info">
-            <div><h3>Алгоритми навколо нас</h3><p>Пояснення, приклади та практичні вправи</p></div>
-            <div class="project-tags"><span>Алгоритми</span><span>Практика</span></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a class="project-visual visual-web" href="#contact" aria-label="Запитати про матеріали з веброзробки">
-            <span class="visual-kicker">ТЕМА 02 · ВЕБРОЗРОБКА</span>
-            <div class="mini-browser"><div>● &nbsp; ● &nbsp; ● <span>моя_перша_сторінка.html</span></div><section><b>&lt;h1&gt;</b><strong>Моя ідея</strong><b>&lt;/h1&gt;</b><i>Створюй. Перевіряй. Покращуй.</i></section></div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
-          </a>
-          <div class="project-info">
-            <div><h3>Створюємо вебсторінку</h3><p>Перші кроки з HTML та CSS</p></div>
-            <div class="project-tags"><span>HTML/CSS</span><span>Творчість</span></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a class="project-visual visual-digital" href="#contact" aria-label="Запитати про вправи з цифрової грамотності">
-            <span class="visual-kicker">ТЕМА 03 · ЦИФРОВА ГРАМОТНІСТЬ</span>
-            <div class="digital-content"><div class="shield-icon">✓</div><div><strong>Безпека<br>починається з тебе</strong><span>Перевіряй · Захищай · Думай</span></div></div>
-            <div class="digital-checks"><span>Надійний пароль</span><span>Приватність онлайн</span><span>Медіаграмотність</span></div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
-          </a>
-          <div class="project-info">
-            <div><h3>Безпека в цифровому світі</h3><p>Пам’ятки та ситуаційні завдання</p></div>
-            <div class="project-tags"><span>Безпека</span><span>Медіаграмотність</span></div>
-          </div>
-        </article>
+      <div class="lesson-filters" role="group" aria-label="Фільтр матеріалів за категорією">
+        <button class="filter-button is-active" type="button" data-category-filter="all" aria-pressed="true">Усі матеріали</button>
+        <button class="filter-button" type="button" data-category-filter="grade-9" aria-pressed="false">Конспекти · 9 клас</button>
+        <button class="filter-button" type="button" data-category-filter="grade-10" aria-pressed="false">Конспекти · 10 клас</button>
+        <button class="filter-button" type="button" data-category-filter="grade-11" aria-pressed="false">Конспекти · 11 клас</button>
+        <button class="filter-button" type="button" data-category-filter="presentations" aria-pressed="false">Презентації уроків</button>
+        <button class="filter-button" type="button" data-category-filter="tests" aria-pressed="false">Тести</button>
+        <button class="filter-button" type="button" data-category-filter="teacher-documents" aria-pressed="false">Мої документи</button>
+      </div>
+      <p class="lesson-status" id="lesson-status" role="status" aria-live="polite">Завантаження уроків…</p>
+      <div class="lesson-grid" id="lesson-grid" aria-live="polite"></div>
+      <div class="editor-callout">
+        <span class="editor-icon" aria-hidden="true">✎</span>
+        <p><strong>Ви вчитель?</strong> Увійдіть у Pages CMS через GitHub, виберіть репозиторій <strong>PortfolioMy</strong> та відкрийте колекцію «Уроки». Зміни з редактора автоматично з’являтимуться на сайті після публікації.</p>
+        <a class="button button-primary" href="https://pagescms.org/" target="_blank" rel="noreferrer">Редагувати уроки <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 

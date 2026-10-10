@@ -1,0 +1,100 @@
+media:
+  - name: lesson_files
+    label: Файли уроків
+    input: uploads/materials
+    output: uploads/materials
+    extensions:
+      - pdf
+      - doc
+      - docx
+      - odt
+      - ppt
+      - pptx
+      - odp
+      - xls
+      - xlsx
+      - ods
+    rename: safe
+
+content:
+  - name: lessons
+    label: Уроки та матеріали
+    type: file
+    path: content/lessons.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Назва уроку або матеріалу
+        type: string
+        required: true
+      - name: category
+        label: Категорія
+        type: select
+        required: true
+        options:
+          values:
+            - name: grade-9
+              label: Конспекти уроків · 9 клас
+            - name: grade-10
+              label: Конспекти уроків · 10 клас
+            - name: grade-11
+              label: Конспекти уроків · 11 клас
+            - name: presentations
+              label: Презентації уроків
+            - name: tests
+              label: Тести
+            - name: teacher-documents
+              label: Мої документи
+      - name: date
+        label: Дата (необов’язково)
+        type: date
+      - name: summary
+        label: Короткий опис
+        type: text
+      - name: body
+        label: Текст уроку
+        type: text
+      - name: resources
+        label: Документи та презентації
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} ({index})"
+        fields:
+          - name: title
+            label: Назва матеріалу
+            type: string
+            required: true
+          - name: kind
+            label: Тип матеріалу
+            type: select
+            required: true
+            options:
+              values:
+                - name: document
+                  label: Документ
+                - name: presentation
+                  label: Презентація
+          - name: file
+            label: Завантажити файл
+            type: file
+            options:
+              media: lesson_files
+              path: materials
+              extensions:
+                - pdf
+                - doc
+                - docx
+                - odt
+                - ppt
+                - pptx
+                - odp
+                - xls
+                - xlsx
+                - ods
+          - name: url
+            label: Або вставити посилання
+            type: string
+            description: Посилання на Google Документ, Презентацію, OneDrive чи інший матеріал.
