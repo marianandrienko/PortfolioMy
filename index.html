@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101412">
+  <meta name="description" content="Професійне портфоліо вчителя інформатики Андрієнко М.А.: навчальні матеріали, методичні напрацювання та контакти.">
+  <title>Андрієнко М.А. — учитель інформатики</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#home" aria-label="Андрієнко М.А. — на головну">AM<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Головна навігація">
+        <a href="#materials">Матеріали</a>
+        <a href="#about">Про вчителя</a>
+        <a href="#contact">Контакти</a>
+        <a class="nav-cta" href="mailto:teacher@example.com">Написати вчителю <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Портфоліо педагога</p>
+        <h1>Андрієнко<br><span>М. А.</span></h1>
+        <p class="hero-description">Учитель інформатики. Допомагаю учням досліджувати цифровий світ, розвивати алгоритмічне мислення та впевнено створювати власні проєкти.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#materials">Навчальні матеріали <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#about">Мій підхід <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-meta">
+          <span>Інформатика · цифрова грамотність</span>
+          <span>Навчання через практику та цікавість</span>
+        </div>
+      </div>
+      <div class="hero-art code-art" aria-label="Ілюстрація фрагмента навчального коду" role="img">
+        <div class="art-grid"></div>
+        <div class="code-window">
+          <div class="code-window-top"><span></span><span></span><span></span><b>урок_інформатики.py</b></div>
+          <pre><span class="code-muted">01</span> <span class="code-purple">def</span> <span class="code-yellow">навчання</span>():
+<span class="code-muted">02</span>     цікавість = <span class="code-green">"увімкнено"</span>
+<span class="code-muted">03</span>     <span class="code-purple">if</span> цікавість:
+<span class="code-muted">04</span>         <span class="code-blue">досліджувати</span>()
+<span class="code-muted">05</span>         <span class="code-blue">створювати</span>()
+<span class="code-muted">06</span>     <span class="code-purple">return</span> <span class="code-green">"нові_можливості"</span></pre>
+        </div>
+        <span class="art-caption">ДУМАЙ · ПРОБУЙ · СТВОРЮЙ</span>
+        <span class="art-index">01 / 03</span>
+      </div>
+    </section>
+
+    <section class="projects section container" id="materials">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Для уроків та самостійної роботи <span class="heading-line"></span></p>
+          <h2>Навчальні<br>матеріали<span class="accent">.</span></h2>
+        </div>
+        <p class="section-note">Добірка демонстраційних навчальних тем і завдань. Матеріали можна адаптувати до класу та навчальної програми.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <a class="project-visual visual-algorithms" href="#contact" aria-label="Запитати про матеріали з алгоритмізації">
+            <span class="visual-kicker">ТЕМА 01 · АЛГОРИТМІЗАЦІЯ</span>
+            <span class="algorithm-title">Від ідеї<br>до алгоритму</span>
+            <div class="flowchart" aria-hidden="true"><span>Старт</span><i>↓</i><span>Умова?</span><i>↙ &nbsp; ↘</i><span class="flow-yes">Так</span><span class="flow-no">Ні</span></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <div><h3>Алгоритми навколо нас</h3><p>Пояснення, приклади та практичні вправи</p></div>
+            <div class="project-tags"><span>Алгоритми</span><span>Практика</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <a class="project-visual visual-web" href="#contact" aria-label="Запитати про матеріали з веброзробки">
+            <span class="visual-kicker">ТЕМА 02 · ВЕБРОЗРОБКА</span>
+            <div class="mini-browser"><div>● &nbsp; ● &nbsp; ● <span>моя_перша_сторінка.html</span></div><section><b>&lt;h1&gt;</b><strong>Моя ідея</strong><b>&lt;/h1&gt;</b><i>Створюй. Перевіряй. Покращуй.</i></section></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <div><h3>Створюємо вебсторінку</h3><p>Перші кроки з HTML та CSS</p></div>
+            <div class="project-tags"><span>HTML/CSS</span><span>Творчість</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <a class="project-visual visual-digital" href="#contact" aria-label="Запитати про вправи з цифрової грамотності">
+            <span class="visual-kicker">ТЕМА 03 · ЦИФРОВА ГРАМОТНІСТЬ</span>
+            <div class="digital-content"><div class="shield-icon">✓</div><div><strong>Безпека<br>починається з тебе</strong><span>Перевіряй · Захищай · Думай</span></div></div>
+            <div class="digital-checks"><span>Надійний пароль</span><span>Приватність онлайн</span><span>Медіаграмотність</span></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-info">
+            <div><h3>Безпека в цифровому світі</h3><p>Пам’ятки та ситуаційні завдання</p></div>
+            <div class="project-tags"><span>Безпека</span><span>Медіаграмотність</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-inner">
+        <p class="eyebrow">Про вчителя <span class="heading-line"></span></p>
+        <div class="about-content">
+          <h2>Навчаю не лише користуватися технологіями, а й <span>розуміти, як вони працюють.</span></h2>
+          <div class="about-details">
+            <p>На уроках важливі допитливість, практика й безпечне цифрове середовище. Учні крок за кроком опановують інформатику, працюють із завданнями та втілюють власні ідеї.</p>
+            <div class="skills"><span>Алгоритмічне мислення</span><span>Програмування</span><span>Цифрова грамотність</span><span>Проєктна робота</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section container" id="contact">
+      <p class="eyebrow">Зв’язок і співпраця</p>
+      <div class="contact-inner">
+        <h2>Навчання<br><span>відкриває</span> можливості<span class="accent">.</span></h2>
+        <a class="contact-link" href="mailto:teacher@example.com">teacher@example.com <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="contact-bottom">
+        <span>Щодо навчальних матеріалів, співпраці та запитань про інформатику.</span>
+        <span class="demo-note">Демонстраційна адреса — замініть на актуальну.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="wordmark" href="#home" aria-label="На початок сторінки">AM<span>.</span></a>
+      <span>© <span id="current-year"></span> Андрієнко М.А. · Портфоліо вчителя інформатики</span>
+      <a href="#home">На початок ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
