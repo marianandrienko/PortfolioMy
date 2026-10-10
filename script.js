@@ -3,18 +3,31 @@ const siteNav = document.querySelector("#site-nav");
 const lessonGrid = document.querySelector("#lesson-grid");
 const lessonStatus = document.querySelector("#lesson-status");
 const categoryFilters = document.querySelector(".lesson-filters");
+const materialSearch = document.querySelector("#material-search");
 
 const categoryLabels = {
   "grade-9": "Конспект уроку · 9 клас",
   "grade-10": "Конспект уроку · 10 клас",
   "grade-11": "Конспект уроку · 11 клас",
+  "practical-works": "Практична робота",
   presentations: "Презентація уроку",
   tests: "Тест",
+  "interactive-tasks": "Інтерактивне завдання",
   "teacher-documents": "Документ учителя",
 };
 
 let lessons = [];
 let activeCategory = "all";
+
+function setActiveCategory(category) {
+  activeCategory = category;
+  categoryFilters.querySelectorAll("[data-category-filter]").forEach((filter) => {
+    const isActive = filter.dataset.categoryFilter === category;
+    filter.classList.toggle("is-active", isActive);
+    filter.setAttribute("aria-pressed", String(isActive));
+  });
+  renderLessons();
+}
 
 menuToggle.addEventListener("click", () => {
   const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
@@ -66,12 +79,19 @@ function getEmbedUrl(value) {
   if (url.hostname === "docs.google.com") {
     const documentIndex = segments.indexOf("document");
     const presentationIndex = segments.indexOf("presentation");
+    const formsIndex = segments.indexOf("forms");
 
     if (documentIndex !== -1 && segments[documentIndex + 1] === "d" && segments[documentIndex + 2]) {
       return `https://docs.google.com/document/d/${encodeURIComponent(segments[documentIndex + 2])}/preview`;
     }
     if (presentationIndex !== -1 && segments[presentationIndex + 1] === "d" && segments[presentationIndex + 2]) {
       return `https://docs.google.com/presentation/d/${encodeURIComponent(segments[presentationIndex + 2])}/embed`;
+    }
+    if (formsIndex !== -1 && segments[formsIndex + 1] === "d" && segments[formsIndex + 2]) {
+      const formPath = segments[formsIndex + 2] === "e" && segments[formsIndex + 3]
+        ? `/forms/d/e/${encodeURIComponent(segments[formsIndex + 3])}/viewform`
+        : `/forms/d/${encodeURIComponent(segments[formsIndex + 2])}/viewform`;
+      return `https://docs.google.com${formPath}?embedded=true`;
     }
   }
 
@@ -167,6 +187,7 @@ function createLessonCard(lesson) {
 }
 
 function renderLessons() {
+  const searchQuery = materialSearch.value.trim().toLocaleLowerCase("uk");
   const visibleLessons = lessons.filter((lesson) => (
     lesson
     && typeof lesson === "object"
@@ -174,11 +195,20 @@ function renderLessons() {
     && lesson.title.trim()
     && categoryLabels[lesson.category]
     && (activeCategory === "all" || lesson.category === activeCategory)
+    && (!searchQuery || [
+      lesson.title,
+      lesson.summary,
+      lesson.body,
+      categoryLabels[lesson.category],
+      ...(Array.isArray(lesson.resources) ? lesson.resources.map((resource) => resource?.title) : []),
+    ].filter((value) => typeof value === "string").join(" ").toLocaleLowerCase("uk").includes(searchQuery))
   ));
 
   lessonGrid.replaceChildren();
   if (!visibleLessons.length) {
-    const emptyMessage = activeCategory === "all"
+    const emptyMessage = searchQuery
+      ? "За цим пошуком матеріалів не знайдено. Змініть запит або виберіть іншу категорію."
+      : activeCategory === "all"
       ? "Уроків поки немає. Додайте перший матеріал через онлайн-редактор для вчителя."
       : "У цій категорії матеріалів поки немає. Додайте їх через онлайн-редактор.";
     lessonGrid.append(createTextElement("p", "lesson-empty", emptyMessage));
@@ -187,7 +217,7 @@ function renderLessons() {
   }
 
   visibleLessons.forEach((lesson) => lessonGrid.append(createLessonCard(lesson)));
-  lessonStatus.textContent = `Матеріалів у категорії: ${visibleLessons.length}`;
+  lessonStatus.textContent = `Матеріалів у списку: ${visibleLessons.length}`;
 }
 
 categoryFilters.addEventListener("click", (event) => {
@@ -196,14 +226,23 @@ categoryFilters.addEventListener("click", (event) => {
     return;
   }
 
-  activeCategory = button.dataset.categoryFilter;
-  categoryFilters.querySelectorAll("[data-category-filter]").forEach((filter) => {
-    const isActive = filter === button;
-    filter.classList.toggle("is-active", isActive);
-    filter.setAttribute("aria-pressed", String(isActive));
-  });
-  renderLessons();
+  setActiveCategory(button.dataset.categoryFilter);
 });
+
+document.addEventListener("click", (event) => {
+  const categoryLink = event.target.closest("[data-open-category]");
+  if (categoryLink) {
+    setActiveCategory(categoryLink.dataset.openCategory);
+  }
+
+  if (event.target.closest(".site-nav a")) {
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Відкрити меню");
+    siteNav.classList.remove("is-open");
+  }
+});
+
+materialSearch.addEventListener("input", renderLessons);
 
 async function loadLessons() {
   try {

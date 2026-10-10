@@ -40,10 +40,14 @@ content:
               label: Конспекти уроків · 10 клас
             - name: grade-11
               label: Конспекти уроків · 11 клас
+            - name: practical-works
+              label: Практичні роботи
             - name: presentations
               label: Презентації уроків
             - name: tests
               label: Тести
+            - name: interactive-tasks
+              label: Інтерактивні завдання
             - name: teacher-documents
               label: Мої документи
       - name: date

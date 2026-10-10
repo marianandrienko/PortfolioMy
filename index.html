@@ -3,121 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101412">
-  <meta name="description" content="Професійне портфоліо вчителя інформатики Андрієнко М.А.: навчальні матеріали, методичні напрацювання та контакти.">
-  <title>Андрієнко М.А. — учитель інформатики</title>
+  <meta name="theme-color" content="#292a2a">
+  <meta name="description" content="Сайт-портфоліо вчителя інформатики Андрієнко М.А.: практичні роботи, уроки, презентації, тести та інтерактивні завдання.">
+  <title>Портфоліо вчителя інформатики Андрієнко М.А.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="wordmark" href="#home" aria-label="Андрієнко М.А. — на головну">AM<span>.</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" id="site-nav" aria-label="Головна навігація">
-        <a href="#materials">Матеріали</a>
-        <a href="#about">Про вчителя</a>
-        <a href="#contact">Контакти</a>
-        <a class="nav-cta" href="mailto:teacher@example.com">Написати вчителю <span aria-hidden="true">↗</span></a>
-      </nav>
+    <div class="masthead">
+      <div class="container masthead-inner">
+        <a class="brand" href="#home" aria-label="Головна — портфоліо Андрієнко М.А.">
+          <span class="brand-mark" aria-hidden="true">А<span>М</span></span>
+          <span>
+            <span class="brand-kicker">Сайт-портфоліо вчителя інформатики</span>
+            <span class="brand-title">Андрієнко <span>М.А.</span></span>
+          </span>
+        </a>
+        <p class="masthead-note">Інформатика · практичні роботи · навчальні матеріали</p>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Відкрити меню">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Головна навігація">
+          <a class="nav-link is-current" href="#home">Головна</a>
+          <a class="nav-link" href="#materials">Каталог файлів</a>
+          <a class="nav-link" href="#materials" data-open-category="tests">Тести онлайн</a>
+          <a class="nav-link" href="#materials" data-open-category="interactive-tasks">Завдання онлайн</a>
+          <a class="nav-link" href="#materials" data-open-category="presentations">Презентації</a>
+          <a class="nav-link" href="#about">Про вчителя</a>
+        </nav>
+        <a class="nav-contact" href="#contact">Контакти <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero container" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> Портфоліо педагога</p>
-        <h1>Андрієнко<br><span>М. А.</span></h1>
-        <p class="hero-description">Учитель інформатики. Допомагаю учням досліджувати цифровий світ, розвивати алгоритмічне мислення та впевнено створювати власні проєкти.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#materials">Навчальні матеріали <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="#about">Мій підхід <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-meta">
-          <span>Інформатика · цифрова грамотність</span>
-          <span>Навчання через практику та цікавість</span>
-        </div>
-      </div>
-      <div class="hero-art code-art" aria-label="Ілюстрація фрагмента навчального коду" role="img">
-        <div class="art-grid"></div>
-        <div class="code-window">
-          <div class="code-window-top"><span></span><span></span><span></span><b>урок_інформатики.py</b></div>
-          <pre><span class="code-muted">01</span> <span class="code-purple">def</span> <span class="code-yellow">навчання</span>():
-<span class="code-muted">02</span>     цікавість = <span class="code-green">"увімкнено"</span>
-<span class="code-muted">03</span>     <span class="code-purple">if</span> цікавість:
-<span class="code-muted">04</span>         <span class="code-blue">досліджувати</span>()
-<span class="code-muted">05</span>         <span class="code-blue">створювати</span>()
-<span class="code-muted">06</span>     <span class="code-purple">return</span> <span class="code-green">"нові_можливості"</span></pre>
-        </div>
-        <span class="art-caption">ДУМАЙ · ПРОБУЙ · СТВОРЮЙ</span>
-        <span class="art-index">01 / 03</span>
-      </div>
-    </section>
+  <div class="container site-shell" id="home">
+    <aside class="sidebar" aria-label="Бічна панель сайту">
+      <section class="sidebox">
+        <h2 class="side-title">Меню сайту</h2>
+        <nav class="side-menu" aria-label="Розділи сайту">
+          <a class="side-link is-current" href="#home"><span class="side-icon">⌂</span>Головна</a>
+          <a class="side-link" href="#materials"><span class="side-icon">▤</span>Каталог файлів</a>
+          <a class="side-link" href="#materials" data-open-category="practical-works"><span class="side-icon">▣</span>Практичні роботи</a>
+          <a class="side-link" href="#materials" data-open-category="tests"><span class="side-icon">✓</span>Тести онлайн</a>
+          <a class="side-link" href="#materials" data-open-category="interactive-tasks"><span class="side-icon">⌘</span>Завдання онлайн</a>
+          <a class="side-link" href="#materials" data-open-category="presentations"><span class="side-icon">▧</span>Презентації уроків</a>
+          <a class="side-link" href="#materials" data-open-category="teacher-documents"><span class="side-icon">▥</span>Мої документи</a>
+          <a class="side-link" href="#about"><span class="side-icon">♙</span>Про вчителя</a>
+        </nav>
+      </section>
 
-    <section class="projects section container" id="materials">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Для уроків та самостійної роботи <span class="heading-line"></span></p>
-          <h2>Навчальні<br>матеріали<span class="accent">.</span></h2>
+      <section class="sidebox teacher-note">
+        <h2 class="side-title">Про сайт</h2>
+        <div class="sidebox-body">
+          <p>Практичні роботи з інформатики, матеріали до уроків, презентації та завдання для самостійного навчання.</p>
+          <a class="side-more" href="#materials">Переглянути матеріали <span aria-hidden="true">→</span></a>
         </div>
-        <p class="section-note">Додавайте й редагуйте уроки в онлайн-редакторі. До кожного уроку можна прикріпити файли або посилання на документи й презентації. <a class="cms-link" href="https://pagescms.org/" target="_blank" rel="noreferrer">Відкрити редактор ↗</a></p>
-      </div>
+      </section>
 
-      <div class="lesson-filters" role="group" aria-label="Фільтр матеріалів за категорією">
-        <button class="filter-button is-active" type="button" data-category-filter="all" aria-pressed="true">Усі матеріали</button>
-        <button class="filter-button" type="button" data-category-filter="grade-9" aria-pressed="false">Конспекти · 9 клас</button>
-        <button class="filter-button" type="button" data-category-filter="grade-10" aria-pressed="false">Конспекти · 10 клас</button>
-        <button class="filter-button" type="button" data-category-filter="grade-11" aria-pressed="false">Конспекти · 11 клас</button>
-        <button class="filter-button" type="button" data-category-filter="presentations" aria-pressed="false">Презентації уроків</button>
-        <button class="filter-button" type="button" data-category-filter="tests" aria-pressed="false">Тести</button>
-        <button class="filter-button" type="button" data-category-filter="teacher-documents" aria-pressed="false">Мої документи</button>
-      </div>
-      <p class="lesson-status" id="lesson-status" role="status" aria-live="polite">Завантаження уроків…</p>
-      <div class="lesson-grid" id="lesson-grid" aria-live="polite"></div>
-      <div class="editor-callout">
-        <span class="editor-icon" aria-hidden="true">✎</span>
-        <p><strong>Ви вчитель?</strong> Увійдіть у Pages CMS через GitHub, виберіть репозиторій <strong>PortfolioMy</strong> та відкрийте колекцію «Уроки». Зміни з редактора автоматично з’являтимуться на сайті після публікації.</p>
-        <a class="button button-primary" href="https://pagescms.org/" target="_blank" rel="noreferrer">Редагувати уроки <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
+      <section class="sidebox teacher-note">
+        <h2 class="side-title">Методична тема</h2>
+        <div class="sidebox-body">
+          <p>Впровадження вільного програмного забезпечення в навчальний процес.</p>
+        </div>
+      </section>
+    </aside>
 
-    <section class="about-section" id="about">
-      <div class="container about-inner">
-        <p class="eyebrow">Про вчителя <span class="heading-line"></span></p>
-        <div class="about-content">
-          <h2>Навчаю не лише користуватися технологіями, а й <span>розуміти, як вони працюють.</span></h2>
-          <div class="about-details">
-            <p>На уроках важливі допитливість, практика й безпечне цифрове середовище. Учні крок за кроком опановують інформатику, працюють із завданнями та втілюють власні ідеї.</p>
-            <div class="skills"><span>Алгоритмічне мислення</span><span>Програмування</span><span>Цифрова грамотність</span><span>Проєктна робота</span></div>
+    <main class="main-content">
+      <section class="welcome-panel">
+        <div class="welcome-heading">
+          <div>
+            <p class="eyebrow"><span class="status-dot"></span> Вітаю на сайті-портфоліо</p>
+            <h1>Портфоліо вчителя<br>інформатики <span>Андрієнко М.А.</span></h1>
+          </div>
+          <div class="welcome-icon" aria-hidden="true">&lt;/&gt;</div>
+        </div>
+        <p class="welcome-copy">Сайт для учнів, учителів та всіх, хто цікавиться інформатикою. Тут зібрані практичні роботи зі шкільних тем, презентації для самостійного опрацювання, онлайн-тести й інтерактивні завдання. Навчайтеся у власному темпі та відкривайте нові можливості цифрового світу.</p>
+        <div class="welcome-actions">
+          <a class="button button-primary" href="#materials">Перейти до матеріалів <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="#about">Професійний профіль <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="welcome-meta">
+          <span><i></i> Учитель інформатики</span>
+          <span><i></i> Практика та вільне ПЗ в освіті</span>
+        </div>
+      </section>
+
+      <section class="materials-section" id="materials">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Навчання та самостійна робота</p>
+            <h2>Каталог матеріалів</h2>
+          </div>
+          <a class="edit-link" href="https://pagescms.org/" target="_blank" rel="noreferrer">Редактор учителя ↗</a>
+        </div>
+        <p class="section-description">Оберіть розділ або знайдіть матеріал за назвою. Нові уроки, документи й презентації додаються в онлайн-редакторі.</p>
+
+        <label class="search-box" for="material-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="material-search" type="search" placeholder="Пошук уроків і матеріалів…" autocomplete="off">
+          <kbd>Пошук</kbd>
+        </label>
+
+        <div class="lesson-filters" role="group" aria-label="Фільтр матеріалів за категорією">
+          <button class="filter-button is-active" type="button" data-category-filter="all" aria-pressed="true">Усі матеріали</button>
+          <button class="filter-button" type="button" data-category-filter="grade-9" aria-pressed="false">Конспекти · 9 клас</button>
+          <button class="filter-button" type="button" data-category-filter="grade-10" aria-pressed="false">Конспекти · 10 клас</button>
+          <button class="filter-button" type="button" data-category-filter="grade-11" aria-pressed="false">Конспекти · 11 клас</button>
+          <button class="filter-button" type="button" data-category-filter="practical-works" aria-pressed="false">Практичні роботи</button>
+          <button class="filter-button" type="button" data-category-filter="presentations" aria-pressed="false">Презентації</button>
+          <button class="filter-button" type="button" data-category-filter="tests" aria-pressed="false">Тести онлайн</button>
+          <button class="filter-button" type="button" data-category-filter="interactive-tasks" aria-pressed="false">Інтерактивні завдання</button>
+          <button class="filter-button" type="button" data-category-filter="teacher-documents" aria-pressed="false">Мої документи</button>
+        </div>
+        <p class="lesson-status" id="lesson-status" role="status" aria-live="polite">Завантаження матеріалів…</p>
+        <div class="lesson-grid" id="lesson-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Професійний профіль</p>
+            <h2>Про вчителя</h2>
           </div>
         </div>
-      </div>
-    </section>
+        <div class="profile-grid">
+          <article class="profile-card">
+            <span class="profile-icon" aria-hidden="true">01</span>
+            <h3>Посада</h3>
+            <p>Учитель інформатики, технік.</p>
+          </article>
+          <article class="profile-card">
+            <span class="profile-icon" aria-hidden="true">02</span>
+            <h3>Методична тема</h3>
+            <p>Впровадження вільного програмного забезпечення в навчальний процес.</p>
+          </article>
+          <article class="profile-card">
+            <span class="profile-icon" aria-hidden="true">03</span>
+            <h3>Навчальний підхід</h3>
+            <p>Поєднання теорії з практичними роботами та цифровими інструментами для самостійного навчання.</p>
+          </article>
+        </div>
+        <div class="achievements">
+          <div>
+            <p class="section-kicker">Історичні результати, наведені в архіві сайту</p>
+            <h3>Учнівські олімпіади</h3>
+            <p class="achievement-note">За навчальні роки 2012–2020: призові місця на міському рівні з інформатики та інформаційних технологій; у 2013–2014 н.р. — І місце на міській та ІІІ місце на обласній олімпіаді з інформатики.</p>
+          </div>
+          <span class="achievement-mark" aria-hidden="true">★</span>
+        </div>
+      </section>
 
-    <section class="contact section container" id="contact">
-      <p class="eyebrow">Зв’язок і співпраця</p>
-      <div class="contact-inner">
-        <h2>Навчання<br><span>відкриває</span> можливості<span class="accent">.</span></h2>
-        <a class="contact-link" href="mailto:teacher@example.com">teacher@example.com <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="contact-bottom">
-        <span>Щодо навчальних матеріалів, співпраці та запитань про інформатику.</span>
-        <span class="demo-note">Демонстраційна адреса — замініть на актуальну.</span>
-      </div>
-    </section>
-  </main>
+      <section class="editor-panel">
+        <div class="editor-icon" aria-hidden="true">✎</div>
+        <div class="editor-copy">
+          <h2>Додати або відредагувати матеріал</h2>
+          <p>Увійдіть у Pages CMS через GitHub, виберіть репозиторій <strong>PortfolioMy</strong> і відкрийте колекцію «Уроки та матеріали». Додавайте конспекти, практичні роботи, тести, презентації, документи чи посилання на Google Drive та OneDrive. Після збереження сайт оновиться автоматично.</p>
+        </div>
+        <a class="button button-primary" href="https://pagescms.org/" target="_blank" rel="noreferrer">Відкрити редактор <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div>
+          <p class="section-kicker">Зворотний зв’язок</p>
+          <h2>Є запитання про матеріали?</h2>
+        </div>
+        <p>Контактну адресу можна додати в редакторі сайту.</p>
+      </section>
+    </main>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="wordmark" href="#home" aria-label="На початок сторінки">AM<span>.</span></a>
-      <span>© <span id="current-year"></span> Андрієнко М.А. · Портфоліо вчителя інформатики</span>
-      <a href="#home">На початок ↑</a>
+      <span>© <span id="current-year"></span> Андрієнко М.А. · Сайт-портфоліо вчителя інформатики</span>
+      <a href="#home">На початок сторінки ↑</a>
     </div>
   </footer>
 </body>
